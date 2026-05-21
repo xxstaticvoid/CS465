@@ -1,0 +1,25 @@
+[
+	{
+		"room_name": "FIRST CLASS ROOM",
+		"image": "first-class.jpg",
+		"image_alt": "First Class Suite",
+		"description": "<p>Cras dui sapien, feugiat vitae tristique ut, lobortis tempor orci. Donec pulvinar sagittis metus ut tristique. Pellentes que habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas idios.</p>",
+		"price": "220"
+	},
+	{
+		"room_name": "DELUXE ROOM",
+		"image": "deluxe.jpg",
+		"image_alt": "Deluxe Room",
+		"description": "<p>Sed et augue lorem. In sit amet placerat arcu. Mauris volutpat ipsum ac justo mollis vel vestibulum orci gravida. Vestibulum sit amet porttitor odio. Nulla facilisi. Fusce at pretium felis.</p>",
+		"price": "150"
+	},
+	{
+		"room_name": "SUITE ROOM",
+		"image": "suite.jpg",
+		"image_alt": "Suite Room",
+		"description": "<p>Sed et augue lorem. In sit amet placerat arcu. Mauris volutpat ipsum ac justo mollis vel vestibulum orci gravida. Vestibulum sit amet porttitor odio. Nulla facilisi. Fusce at pretium felis.</p>",
+		"price": "180"
+	
+	}
+
+]
