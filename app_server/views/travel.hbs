@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div id="background">
-		<div id="page">s
+		<div id="page">
 			{{> header}}
 			<div id="contents">
 				<div class="box">
@@ -18,7 +18,7 @@
 							<ul id="sites">
 				{{#each trips}}
 								<li>
-									<a href="/travel"><img src="images/{{this.image}}" alt="{{this.alt}}"></a>
+									<a href="/api/trips/{{this.code}}"><img src="images/{{this.image}}" alt="{{this.alt}}"></a>
 									<h2><a href=“/travel">{{this.name}} </a></h2>
 									{{{this.description}}}
 								</li>
