@@ -1,21 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { TripCard } from '../trip-card/trip-card';
 import { Trip } from '../models/trip';
 import { TripDataService } from '../services/trip-data';
 
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-trip-listing',
+  standalone: true,
   imports: [TripCard],
   templateUrl: './trip-listing.html',
-  styleUrl: './trip-listing.css',
-  providers: [TripDataService]
+  styleUrl: './trip-listing.css', //providers: [TripDataService],
 })
 
 export class TripListing implements OnInit {
-	trips: Trip[] = [];
+	trips = signal<Trip[]>([]);
 	message: string = '';	
 
 	constructor(
@@ -30,22 +31,22 @@ export class TripListing implements OnInit {
 	}
 
 	private getStuff(): void {
-		this.tripDataService.getTrips()
-			.subscribe({
-				next: (value: any) => {
-					this.trips = value;
+		this.tripDataService.getTrips().subscribe({
+      next: (value: Trip[]) => {
+        this.trips.set(value);
 
-					if(value.length > 0) {
-						this.message = 'There are ' + value.length + ' trips available.';
-					} else {
-						this.message = 'There were no trips retrieved from the database';
-					}
-					console.log(this.message);
-				},
-				error: (error: any) => {
-					console.log('Error: ' + error);
-				}						
-			})
+        if(value.length > 0) {
+          this.message = 'There are ' + value.length + ' trips available.';
+        } else {
+          this.message = 'There were no trips retrieved from the database';
+        }
+
+        console.log(this.message);
+      },
+      error: (error: any) => {
+        console.log('Error: ' + error);
+      }
+    });
 	}
 
 	ngOnInit(): void {

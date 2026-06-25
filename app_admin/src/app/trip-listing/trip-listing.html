@@ -7,9 +7,11 @@
 
 <div class="row">
   <!-- new for loop -->
-  @for (trip of trips; track $index) {
-  <div class="col-md-4">
-    <app-trip-card [trip]="trip" class="card-deck mt-2">ppp</app-trip-card>
-  </div>
+  @for (trip of trips(); track trip.code) {
+      <div class="col-md-4">
+        <app-trip-card [trip]="trip" class="card-deck mt-2">ok,</app-trip-card>
+      </div>
+  } @empty {
+      <p>No trips loaded.</p>
   }
 </div>
