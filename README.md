@@ -31,6 +31,9 @@ Methods for request and retrieval necessitate various types of API testing of en
 In a full stack application, methods, endpoints, and security are all important parts of API testing. Methods describe the type of request being made, such as GET for retrieving data, POST for creating data, and PUT for updat3ing data. Endpoints are the specific API urls that the frontend uses to communicate with the backend. In the travlr project I built endpoints such as /api/trips or /api/trips/tripCode which retrieve trip data from the database. I tested these endpoints with Postman to help confirm that the API is correctly sending and receiving data before relying on the frontend. Security adds another layer to testing because some requests should only work for authorized users. In my project, login returned a JWT token, and protected requests required that token in the authorization header. This means testing was not only about checking whether GET and PUT requests worked, but also whether the API correctly blocked unauthorized requests and allowed authorized ones.
 
 
+### Check out the completed project on branch 'module7'
+
+
 
 
 
